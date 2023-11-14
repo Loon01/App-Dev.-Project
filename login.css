@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+}
+
+div#container {
+    width: 50%;
+    margin: 100px auto;
+    background-color: #dfc786;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    color: black;
+}
+
+a {
+    width: 50%;
+}

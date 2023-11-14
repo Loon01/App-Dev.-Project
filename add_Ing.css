@@ -1,0 +1,38 @@
+body {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+div#name_Ing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: solid black 2px;
+    padding: 10px;
+    margin: 10px;
+}
+
+input#add_Ing {
+    margin: 10px;
+    padding: 10px;
+    border: solid black 3px;
+    width: 100%;
+}
+
+div#ing_info {
+    display: block;
+    background-color: white;
+    border: solid black 2px;
+    padding: 10px;
+    margin: 100px;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+}

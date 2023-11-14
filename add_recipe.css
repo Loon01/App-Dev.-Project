@@ -1,0 +1,55 @@
+body {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+div#name_Rec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: solid black 2px;
+    padding: 10px;
+    margin: 10px;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+input#add_Rec {
+    margin: 10px;
+    padding: 10px;
+    border: solid black 3px;
+    width: 100%;
+}
+
+div#container {
+    display: block;
+    border: solid black 2px;
+}
+
+div#text {
+    display: inline-block;
+    justify-content: start;
+    border: solid;
+}
+
+input.sub_info {
+    margin: 10px;
+    padding: 10px;
+    border: solid black 3px;
+    width: auto;
+}
+
+div#add_ing {
+    display: inline-block;
+    float: right;
+    justify-content: end;
+    border: solid;
+}
