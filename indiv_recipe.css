@@ -3,8 +3,12 @@ body {
 }
 
 div#container {
-    border: solid;
-    display: block;
+    border: solid black 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
     background-color: white;
     margin: 100px;
 }
@@ -14,21 +18,30 @@ h1 {
 }
 
 div#main-feature {
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding: 20px;
     height: 200px;
     background-color: white;
     border: solid black 10px;
-    /*width: 50%; */
+    width: 50%; 
     margin: auto;
 }
 
 div.features {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+     text-align: center;
+    padding: 20px;
     height: 200px;
     background-color: white;
     border: solid black 10px;
-    /*width: 50%; */
+    width: 50%; 
     margin: auto;
-    text-align: center;
-    display: block;
+
 }
