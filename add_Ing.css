@@ -1,8 +1,10 @@
-body {
+body, html {
     margin: auto;
+    height: 100%;
 }
 
-h1 {
+.container h1 {
+    margin-top: 100px;
     text-align: center;
     font-size: 50px;
 }
