@@ -2,13 +2,13 @@
 require "functions.php";
 
 if (isset($_POST["register"])) {
-if (registrasi($_POST) > 0) {
-echo "<script>
-            alert('user baru berhasil ditambahkan');
-            document.location.href = 'index.php';
-            </script>";
+if (registrasi($_POST, $collection) > 0) {
+    echo "<script>
+        alert('New user successfully added');
+        document.location.href = 'index.php';
+        </script>";
 } else {
-echo mysqli_error($connect);
+    echo "Failed to register user.";
 }
 }
 ?>

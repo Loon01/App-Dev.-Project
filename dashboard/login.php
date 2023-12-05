@@ -2,56 +2,46 @@
 session_start();
 require 'functions.php';
 
-// cookie
+// Cookie
 if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
 $id = $_COOKIE['id'];
 $key = $_COOKIE['key'];
 
-// username 
-$result = mysqli_query($connect, "SELECT username 
-                                FROM user
-                                WHERE id = $id;
-                                ");
-$row = mysqli_fetch_assoc($result);
-
-// username to cookie
-if ($key === hash('sha256', $row['username'])) {
-    $_SESSION['login'] = true;
+// Fetch user data
+$user = $collection->findOne(['_id' => new MongoDB\BSON\ObjectId($id)]);
+if ($user) {
+    // Check username and set session
+    if ($key === hash('yurr420', $user['username'])) {
+        $_SESSION['login'] = true;
+    }
 }
 }
 
+// Redirect if already logged in
 if (isset($_SESSION["login"])) {
 header("Location: index.php");
 exit;
 }
 
 if (isset($_POST['login'])) {
-
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-// check username
-$result = mysqli_query($connect, "SELECT * FROM user
-                                    WHERE username = '$username'
-                                    ");
+// Find user by username
+$user = $collection->findOne(['username' => $username]);
 
-if (mysqli_num_rows($result) === 1) {
-    // check password
-    $row = mysqli_fetch_assoc($result);
-    if (password_verify($password, $row["password"])) {
-        // check session
-        $_SESSION["login"] = true;
+if ($user && password_verify($password, $user["password"])) {
+    $_SESSION["login"] = true;
 
-        // check remember me
-        if (isset($_POST["remember"])) {
-            // cookie
-            setcookie('id', $row['id'], time() + 60);
-            setcookie('key', hash('sha256', $row['username']), time() + 60);
-        }
-
-        header("Location: index.php");
-        exit;
+    // Remember Me functionality
+    if (isset($_POST["remember"])) {
+        // Set cookies
+        setcookie('id', (string)$user['_id'], time() + 60);
+        setcookie('key', hash('sha256', $user['username']), time() + 60);
     }
+
+    header("Location: index.php");
+    exit;
 }
 
 $error = true;
