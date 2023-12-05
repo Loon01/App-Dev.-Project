@@ -2,7 +2,8 @@ body {
     margin: auto;
 }
 
-h1 {
+.container h1 {
+    margin-top: 100px;
     text-align: center;
     font-size: 50px;
 }
@@ -30,13 +31,16 @@ input#add_Rec {
 }
 
 div#container {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
     border: solid black 2px;
 }
 
 div#text {
-    display: inline-block;
+    display: flex;
     justify-content: start;
+    flex-direction: column;
+    float: left;
     border: solid;
 }
 
@@ -48,8 +52,9 @@ input.sub_info {
 }
 
 div#add_ing {
-    display: inline-block;
-    float: right;
+    display: flex;
     justify-content: end;
+    flex-direction: column;
+    float: right;
     border: solid;
 }
