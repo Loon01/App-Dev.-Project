@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
 const LikedRecipes = new mongoose.Schema({
-  title: {
+  recipeID: {                 // title of recipe
     type: String,
+    unique: true,
     required: true,
   },
   ingredients: [String],

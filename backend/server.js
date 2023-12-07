@@ -7,13 +7,12 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 
-const uri = '${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.1qy8cpi.mongodb.net/';
+const uri = 'mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.1qy8cpi.mongodb.net/';
 
 // Connect to MongoDB Atlas
 mongoose.connect(uri, {
 useNewUrlParser: true,
-useUnifiedTopology: true,
-useCreateIndex: true,
+useUnifiedTopology: true
 })
 .then(() => {
 console.log('Connected to MongoDB Atlas');
@@ -30,6 +29,12 @@ console.error('Error connecting to MongoDB Atlas:', err.message);
 app.use(express.json()); // Middleware to parse JSON requests
 app.use(cors());
 
+const Home = require("./controllers/controller");
+const LoginRoute = require("./routes/loginRoute");
+const RegisterRoute = require("./routes/registerRoute");
+const verifyToken = require("./auth/middleware");
+const RecipeRoute = require("./routes/recipeRoute");
+const ForgotPassword = require("./routes/forgotPassRoute");
 app.use("/auth", LoginRoute);
 app.use("/auth", RegisterRoute);
 app.use("/auth", RecipeRoute);
