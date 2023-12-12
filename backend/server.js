@@ -6,9 +6,13 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
+const templates = require('./routes/tempRoute');
+
+// Set your view engine (like EJS)
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/frontend/public/views'); // Assuming your EJS files are in a 'views' folder
 
 const uri = 'mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.1qy8cpi.mongodb.net/';
-
 // Connect to MongoDB Atlas
 mongoose.connect(uri, {
 useNewUrlParser: true,
@@ -29,6 +33,8 @@ console.error('Error connecting to MongoDB Atlas:', err.message);
 app.use(express.json()); // Middleware to parse JSON requests
 app.use(cors());
 
+app.use('/recipes', templates);
+
 const Home = require("./controllers/controller");
 const LoginRoute = require("./routes/loginRoute");
 const RegisterRoute = require("./routes/registerRoute");
@@ -42,6 +48,11 @@ app.use("/auth", router);
 app.use("/auth", ForgotPassword);
 
 router.get("/", verifyToken, Home.Home);
+
+app.get('/navbar', (req, res) => {
+    // Pass authentication status and active link to navbar.ejs
+    res.render('navbar', { authenticated: req.user, active: 'home' }); // Replace 'home' with the active link name
+});
 
 /* app.post('/register', async (req, res) => {
 try {
