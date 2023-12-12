@@ -20,7 +20,7 @@ div#main-feature {
     align-items: center;
     text-align: center;
     padding: 20px;
-    height: 300px;
+    /*height: 300px; */
     background-color: white;
     border: solid black 5px;
     /*width: 50%; */
@@ -33,7 +33,7 @@ div.features {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    height: 200px;
+    /*height: 200px; */
     background-color: white;
     border: solid black 5px;
     /*width: 50%; */
@@ -47,6 +47,13 @@ h1 {
     color: #1A69E5;
     margin: 0px;
     font-style: italic;
+}
+
+img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 h2 {
