@@ -12,7 +12,7 @@ const templates = require('./routes/tempRoute');
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/frontend/public/views'); // Assuming your EJS files are in a 'views' folder
 
-const uri = 'mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.1qy8cpi.mongodb.net/';
+const uri = 'mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.1qy8cpi.mongodb.net/?retryWrites=true&w=majority';
 // Connect to MongoDB Atlas
 mongoose.connect(uri, {
 useNewUrlParser: true,
@@ -20,6 +20,9 @@ useUnifiedTopology: true
 })
 .then(() => {
 console.log('Connected to MongoDB Atlas');
+app.listen(PORT, () => {
+    'App is listening.'
+})
 })
 .catch((err) => {
 console.error('Error connecting to MongoDB Atlas:', err.message);
