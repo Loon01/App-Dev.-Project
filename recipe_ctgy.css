@@ -10,6 +10,8 @@ div#container {
     text-align: center;
     padding: 20px;
     background-color: #114388;
+    background-image: url(https://www.transparenttextures.com/patterns/food.png);
+    background-size: auto;
     margin: 100px;
 }
 
@@ -18,10 +20,25 @@ h1 {
 }
 
 img {
-    width: 100%;
+    width: 90%;
     max-height: 500px;
     object-fit: cover;
     border-radius: 20px;
+    border: solid black 1px;
+}
+
+.main-feature a {
+    display: block;
+    padding: 2px;
+    background-color: #1A69E5;
+    text-decoration: none;
+    color: aliceblue;
+    border: solid black 2px;
+    border-radius: 10px;
+}
+
+.main-feature a:hover {
+    background-color: lightgray;
 }
 
 div.main-feature {
@@ -33,7 +50,7 @@ div.main-feature {
     padding: 20px;
     /*height: 200px; */
     background-color: white;
-    border: solid black 10px;
+    border: solid black 5px;
     /*width: 50%; */
     margin: 10px 303px;
 }
