@@ -1,0 +1,62 @@
+/* Recipes.css */
+
+body {
+  margin: auto;
+  background-image: url(https://www.transparenttextures.com/patterns/food.png);
+  background-size: auto;
+}
+
+/* Container for the entire Recipes component */
+#recipes-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    margin: 100px 20px 20px 20px; /* Top 100px, Right 20px, Bottom 20px, Left 20px */
+  }
+  
+  /* Styles for the left column containing the recipes */
+  #recipes-list-container {
+    flex: 1; /* Take up remaining space */
+    max-width: 400px; /* Limit the width of the recipes list */
+    background-color: white; /* Set the background color to white */
+    border: 1px solid black; /* Add a thin black border */
+  }
+  
+  /* Styles for the right column containing the form */
+  #recipe-form-container {
+    flex: 1; /* Take up remaining space */
+    max-width: 400px; /* Limit the width of the form */
+    margin-left: 20px; /* Add some space between the recipes and the form */
+    background-color: white; 
+    border: 1px solid black; 
+  }
+  
+  /* Additional styles for form elements if needed */
+  #recipe-form {
+    max-width: 400px;
+    margin: auto; /* Center the form horizontally */
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    width: 100%; /* Set width to 100% to match the container's width */
+    max-width: 100%; /* Allow for responsiveness */
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  button {
+    background-color: #1A69E5;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #155492;
+  }

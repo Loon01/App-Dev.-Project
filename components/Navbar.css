@@ -1,0 +1,38 @@
+/* Navbar.css */
+
+ul#navbar {
+    list-style-type: none;
+    background-color: white;
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,.15);
+    font-weight: bold;
+    font-style: italic;
+}
+
+li.navitem {
+    float: left;
+    font-size: xx-large;
+}
+
+li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 0px 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 40px; /* Corrected the font size value */
+    text-transform: capitalize;
+}
+
+li a:hover {
+    background-color: lightgrey;
+}

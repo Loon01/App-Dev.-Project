@@ -1,0 +1,65 @@
+/* Ingredients.css */
+
+body {
+    margin: auto;
+    background-image: url(https://www.transparenttextures.com/patterns/food.png);
+    background-size: auto;
+  }
+  
+  /* Container for the entire Ingredients component */
+  #ingredients-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    margin: 100px 20px 20px 20px; /* Top 100px, Right 20px, Bottom 20px, Left 20px */
+  }
+  
+  /* Styles for the left column containing the ingredients list */
+  #ingredients-list-container {
+    flex: 1; /* Take up remaining space */
+    max-width: 400px; /* Limit the width of the ingredients list */
+    background-color: white; /* Set the background color to white */
+    border: 1px solid black; /* Add a thin black border */
+    padding: 20px; /* Add some padding */
+  }
+  
+  /* Styles for the right column containing the form */
+  #ingredient-form-container {
+    flex: 1; /* Take up remaining space */
+    max-width: 400px; /* Limit the width of the form */
+    margin-left: 20px; /* Add some space between the ingredients list and the form */
+    background-color: white; /* Set the background color to white */
+    border: 1px solid black; /* Add a thin black border */
+    padding: 20px; /* Add some padding */
+  }
+  
+  /* Additional styles for form elements if needed */
+  #ingredient-form {
+    max-width: 400px;
+    margin: auto; /* Center the form horizontally */
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #1A69E5;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #155492;
+  }
+  
